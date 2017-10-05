@@ -23,5 +23,10 @@ class Transfer
   end
   def reverse_transfer
     binding.pry
+    if self.status == "complete"
+      self.sender += self.amount
+      self.receiver -= self.amount 
+      self.status = "pending"
+    end
   end
 end
