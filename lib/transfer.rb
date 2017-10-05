@@ -1,3 +1,4 @@
+require 'pry'
 class Transfer
   attr_accessor  :status
   attr_reader :sender, :receiver, :amount
@@ -18,7 +19,9 @@ class Transfer
     else
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
-
     end
+  end
+  def reverse_transfer 
+    binding.pry
   end
 end
